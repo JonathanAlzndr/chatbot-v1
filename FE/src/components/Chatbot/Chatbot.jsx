@@ -62,7 +62,7 @@ export default function ChatBot() {
       {isOpen && (
         <div
           className={`fixed bottom-24 right-6 ${
-            isExpanded ? "w-[90vw] max-h-[90vh]" : "w-80 max-h-[70vh]"
+            isExpanded ? "w-[70vw] max-h-[80vh]" : "w-80 max-h-[70vh]"
           } bg-white border border-slate-300 rounded-xl shadow-xl flex flex-col overflow-hidden transition-all duration-300 z-40`}
         >
           <div className="bg-slate-100 px-4 py-3 flex justify-between items-center">
