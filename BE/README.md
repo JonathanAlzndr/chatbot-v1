@@ -1,23 +1,44 @@
 # 🤖 Chatbot Naive Bayes (Flask)
 
-Sebuah chatbot sederhana menggunakan Flask dan model Naive Bayes untuk memprediksi intent dan memberikan respons berdasarkan kemiripan input.
+Chatbot sederhana yang dibangun dengan Flask dan model Naive Bayes untuk memprediksi *intent* dari input pengguna, lalu memberikan respons yang relevan berdasarkan kemiripan teks.
 
-Setup:
-python -m venv venv (Buat venv)
-venv\Scripts\activate (Aktifkan venv) 
-pip install -r requirements.txt (install dependencies)
-python run.py (jalankan aplikasi)
+---
 
-http://localhost:5000/predict POST (URL Predict) 
 
-request body: 
-```{
-    "message": "string"
-}```
+## ⚙️ Instalasi
 
-response body: 
-```{
-    "intent": "string",
-    "response": "string"
-}```
+### 1. Buat & aktifkan venv
+
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows
+```
+### 2. Install requirements & jalankan
+
+```bash
+pip install -r requirements.txt
+
+python run.py
+```
+
+### Endpoint API
+
+#### POST /predict
+#### http://localhost:5000/predict
+#### content-type: application/json
+
+#### request body: 
+{
+  "message": "halo"
+}
+
+#### response body:
+{
+  "intent": "greeting",
+  "response": "Hai! Ada yang bisa saya bantu?"
+}
+
+
+
+
 
