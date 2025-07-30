@@ -4,9 +4,10 @@ import { MessageCircle, Send, Maximize } from 'react-feather';
 import Botimg from "../../assets/gambar/chatbot.png"
 import Profilmg from "../../assets/gambar/profil.png"
 import axios from 'axios';
+import {GeminiKey} from "../../config/api"
 
-const GeminiAPi = "AIzaSyCxk9cAYZ11pWlT1MYE4GPYRHN2eqQBFQo"
-const GeminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GeminiAPi}`
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GeminiKey}`;
+
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
