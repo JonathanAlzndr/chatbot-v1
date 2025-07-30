@@ -28,15 +28,20 @@ python run.py
 #### content-type: application/json
 
 #### request body: 
+```json
 {
   "message": "halo"
 }
+```
 
 #### response body:
+```json
 {
   "intent": "greeting",
   "response": "Hai! Ada yang bisa saya bantu?"
 }
+```
+    
 
 
 
