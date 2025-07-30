@@ -28,17 +28,12 @@ http://localhost:5173
 🔌 MENGHUBUNGKAN KE BACKEND (API)
 ===========================================
 
-Pastikan backend Flask sudah berjalan di:
+Pastikan backend  sudah berjalan di:
 http://localhost:5000
 
 Frontend akan mengirim POST ke:
 http://localhost:5000/predict
 
-Contoh respons:
-{
-  "intent": "greeting",
-  "response": "Hai! Ada yang bisa saya bantu?"
-}
 
 
 
