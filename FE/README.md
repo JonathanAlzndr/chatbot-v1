@@ -1,59 +1,56 @@
-# 🤖 Chatbot Naive Bayes (Flask)
+🧠 Frontend Chatbot - React + Vite + Tailwind
 
-Chatbot sederhana menggunakan Flask dan algoritma Naive Bayes untuk memprediksi intent dari pesan pengguna dan memberikan respons yang sesuai.
+Project ini adalah antarmuka frontend untuk chatbot Naive Bayes.
 
----
+===========================================
+🔧 LANGKAH-LANGKAH MENJALANKAN FRONTEND
+===========================================
 
-## ⚙️ Langkah Instalasi & Setup
+1. CLONE PROJECT (jika belum punya)
+------------------------------------
+git clone https://github.com/JonathanAlzndr/chatbot-v1.git
+cd chatbot-v1/FE
 
-1. Clone project dari GitHub:
-   git clone https://github.com/JonathanAlzndr/chatbot-v1.git
+2. INSTALL DEPENDENSI
+-----------------------
+npm install
 
-2. Masuk ke folder backend:
-   cd chatbot-v1/BE
+3. JALANKAN PROJECT
+-----------------------
+npm run dev
 
-3. Buat dan aktifkan virtual environment (Windows):
-   python -m venv venv
-   venv\Scripts\activate
+4. AKSES DI BROWSER
+---------------------
+http://localhost:5173
 
-4. Install library yang dibutuhkan:
-   pip install flask flask-cors scikit-learn pandas openpyxl
 
-   (Atau jika sudah tersedia `requirements.txt`):
-   pip install -r requirements.txt
+===========================================
+🔌 MENGHUBUNGKAN KE BACKEND (API)
+===========================================
 
-5. Jalankan server backend:
-   python run.py
+Pastikan backend Flask sudah berjalan di:
+http://localhost:5000
 
----
+Frontend akan mengirim POST ke:
+http://localhost:5000/predict
 
-## 🌐 Endpoint API
-
-POST /predict  
-http://localhost:5000/predict  
-Header: Content-Type: application/json
-
-Contoh Request:
-{
-  "message": "halo"
-}
-
-Contoh Response:
+Contoh respons:
 {
   "intent": "greeting",
   "response": "Hai! Ada yang bisa saya bantu?"
 }
 
----
 
-## 🛠 Kenapa Perlu CORS?
+===========================================
+📁 STRUKTUR DASAR FOLDER
+===========================================
 
-CORS (Cross-Origin Resource Sharing) diperlukan agar frontend (misalnya React atau HTML biasa) yang berjalan di `localhost:3000` bisa mengakses backend Flask di `localhost:5000`. Tanpa ini, browser akan memblokir request karena perbedaan origin.
+chatbot-v1/
+├── FE/           <-- folder frontend
+│   ├── src/
+│   ├── index.html
+│   └── ...
+└── BE/           <-- folder backend (Flask)
 
----
-
-## 🧠 Tips Tambahan
-
-- Untuk lihat dataset di Excel dari VSCode, buka file `.xlsx` langsung dari sidebar atau gunakan ekstensi Excel Viewer.
-- Jangan lupa buat file `.gitignore` untuk mengecualikan folder `venv`.
-
+===========================================
+ 
