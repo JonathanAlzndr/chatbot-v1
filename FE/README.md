@@ -34,7 +34,23 @@ http://localhost:5000
 Frontend akan mengirim POST ke:
 http://localhost:5000/predict
 
+Contoh respons:
+{
+  "intent": "greeting",
+  "response": "Hai! Ada yang bisa saya bantu?"
+}
 
 
+===========================================
+📁 STRUKTUR DASAR FOLDER
+===========================================
 
+chatbot-v1/
+├── FE/           <-- folder frontend
+│   ├── src/
+│   ├── index.html
+│   └── ...
+└── BE/           <-- folder backend (Flask)
+
+===========================================
  
