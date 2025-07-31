@@ -19,3 +19,8 @@ Warna teks sekunder    : #D1D5DB (Tailwind: dark:text-gray-400)
 Warna tombol utama     : #60A5FA (Tailwind: dark:bg-blue-400)
 Teks tombol utama      : #1F2937 (Tailwind: dark:text-gray-900)
 Hover tombol
+
+
+
+
+3. DArkmode =>  web.dev
