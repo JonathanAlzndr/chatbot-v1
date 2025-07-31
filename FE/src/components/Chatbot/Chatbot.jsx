@@ -4,11 +4,12 @@ import Botimg from "../../assets/gambar/chatbot.png";
 import Profilmg from "../../assets/gambar/profil.png";
 import axios from "axios";
 import { GeminiApi } from "../../config/api";
+import { FLASK_URL } from "../../config/api";
 
-const FLASK_URL = "http://127.0.0.1:5000/predict"; // endpoint lokal Flask
 
-export default function ChatBot() {
-  const [isOpen, setIsOpen] = useState(false);
+
+export default function ChatBot({ isOpen, setIsOpen }) {
+  
   const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState([
     { type: "bot", text: "Halo! Ada yang bisa saya bantu hari ini?" },

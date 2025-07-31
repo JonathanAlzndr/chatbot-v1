@@ -1,7 +1,11 @@
-import React from 'react'
+import { React} from 'react'
 import Botimg from "../../assets/gambar/chatbot.png"
+import ChatBot from "../Chatbot/Chatbot"
 
-const Hero = () => {
+const Hero = ({openChat}) => {
+  
+  
+
   return (
     <section className="    grid grid-cols-2 px-20 justify-center items-center bg-gradient-to-br py-20 text-center">
       <div className="max-w-3xl mx-auto px-4 text-start ">
@@ -11,9 +15,7 @@ const Hero = () => {
         <p className="text-lg  mb-6">
           Dapatkan bantuan akademik 24/7 — dari informasi KRS, jadwal kuliah, hingga pertanyaan seputar dosen pembimbing.
         </p>
-        <a href="#chatbot" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
-          Mulai Chat
-        </a>
+        <button    onClick={openChat} className='bg-blue-500 text-[15px] rounded-2xl p-3 text-white hover:bg-blue-600'>Mulai Chat</button>
             </div>
 
       <div className="flex justify-center items-center">
