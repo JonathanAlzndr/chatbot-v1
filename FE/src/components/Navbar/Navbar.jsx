@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = ({ DarkMode, toggleDarkMode }) => {
   return (
-    <nav className="bg-white dark:text-white  dark:hover:text-blue-400  dark:bg-gray-800 text-gray-800 shadow-md  py-4 flex items-center justify-between px-20">
+    <nav className="bg-white dark:text-white    dark:bg-gray-800 text-gray-800 shadow-md  py-4 flex items-center justify-between px-20">
       {/* Logo atau Judul */}
       <h1 className="text-2xl font-bold tracking-wide">Chatbot Akademik</h1>
 
@@ -19,7 +19,7 @@ const Navbar = ({ DarkMode, toggleDarkMode }) => {
         </li>
       </ul>
       <div className="flex justify-center items-center gap-x-9">
-        <button className="dark:bg-blue-400 dark:text-gray-900 dark:hover:bg-blue-500 rounded-2xl hover:text-white-300 bg-blue-500 hover:bg-blue-600 text-white w-22 h-10">
+        <button className=" dark:text-gray-100 dark:hover:bg-blue-500 rounded-2xl hover:text-white-300 bg-indigo-600 hover:bg-blue-600 text-white w-22 h-10">
           Login
         </button>
 

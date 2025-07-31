@@ -15,7 +15,7 @@ const Hero = ({openChat}) => {
         <p className="text-lg  mb-6">
           Dapatkan bantuan akademik 24/7 — dari informasi KRS, jadwal kuliah, hingga pertanyaan seputar dosen pembimbing.
         </p>
-        <button    onClick={openChat} className='bg-blue-500 text-[15px] rounded-2xl p-3 text-white hover:bg-blue-600'>Mulai Chat</button>
+        <button    onClick={openChat} className='bg-indigo-600 text-[15px] text-gray-100 rounded-2xl p-3  hover:bg-blue-600'>Mulai Chat</button>
             </div>
 
       <div className="flex justify-center items-center">

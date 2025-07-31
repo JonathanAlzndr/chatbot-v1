@@ -54,7 +54,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 bg-indigo-600 text-white px-4 py-3 rounded-full shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 z-50"
+        className="fixed dark:text-gray-100 bottom-6 right-6 bg-indigo-600 text-white px-4 py-3 rounded-full shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 z-50"
       >
         <MessageCircle size={18} />
         <span>Chat</span>
@@ -62,14 +62,14 @@ export default function ChatBot({ isOpen, setIsOpen }) {
 
       {isOpen && (
         <div
-          className={`fixed bottom-24 right-6 ${
+          className={`fixed bottom-24  right-6 ${
             isExpanded ? "w-[70vw] max-h-[80vh]" : "w-80 max-h-[70vh]"
           } bg-white border border-slate-300 rounded-xl shadow-xl flex flex-col overflow-hidden transition-all duration-300 z-40`}
         >
-          <div className="bg-slate-100 px-4 py-3 flex justify-between items-center">
+          <div className="bg-slate-100 dark:bg-gray-800 px-4 py-3 flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <img src={Botimg} className="w-8 h-8 rounded-full" alt="Bot" />
-              <span className="font-medium text-slate-800">ChatBot</span>
+              <img src={Botimg} className="w-8 h-8 rounded-full border-0  dark:border-white/10 dark:bg-black/30 p-1" alt="Bot" />
+              <span className="font-medium dark:text-white text-slate-800">ChatBot</span>
             </div>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -81,7 +81,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
 
           <div
             ref={chatBodyRef}
-            className="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-white"
+            className="flex-1 dark:bg-gray-900 p-4 overflow-y-auto scrollable space-y-4 text-sm bg-white"
           >
             {messages.map((msg, i) => (
               <div
@@ -93,7 +93,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
                 {msg.type === "bot" && (
                   <img
                     src={Botimg}
-                    className="w-6 h-6 rounded-full"
+                    className="w-7 h-7 rounded-full border border-white  dark:border-white/10 dark:bg-black/10 p-1"
                     alt="Bot"
                   />
                 )}
@@ -101,7 +101,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
                   className={`${
                     msg.type === "user"
                       ? "bg-indigo-600 text-white"
-                      : "bg-slate-100 text-slate-800"
+                      : "bg-slate-100   text-slate-800"
                   } p-3 rounded-lg max-w-[75%] shadow`}
                 >
                   {msg.text}
@@ -109,7 +109,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
                 {msg.type === "user" && (
                   <img
                     src={Profilmg}
-                    className="w-6 h-6 rounded-full"
+                    className="w-6 h-6 rounded-full border border-white dark:border-white/10 dark:bg-white "
                     alt="User"
                   />
                 )}
@@ -117,23 +117,23 @@ export default function ChatBot({ isOpen, setIsOpen }) {
             ))}
           </div>
 
-          <div className="border-t border-slate-200 p-3 bg-white">
+          <div className="border-t border-slate-200 p-3 text-black bg-white dark:text-white dark:bg-gray-950">
             <div className="flex gap-2 flex-wrap mb-2">
               <button
                 onClick={() => sendQuick("Jadwal KRS")}
-                className="bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full"
+                className="bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full dark:bg-gray-950 border dark:border-white/30  dark:text-blue-100 "
               >
                 Jadwal KRS
               </button>
               <button
                 onClick={() => sendQuick("Syarat Skripsi")}
-                className="bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full"
+                className="bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full dark:bg-gray-950 border dark:border-white/30  dark:text-blue-100 "
               >
                 Syarat Skripsi
               </button>
               <button
                 onClick={() => sendQuick("Kalender Akademik")}
-                className="bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full"
+                className="bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full dark:bg-gray-950 border dark:border-white/30  dark:text-blue-100 "
               >
                 Kalender Akademik
               </button>
