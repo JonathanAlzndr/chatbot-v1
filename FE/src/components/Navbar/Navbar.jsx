@@ -1,13 +1,42 @@
 import React from "react";
+import { useState } from "react";
+import { HiMenuAlt1 } from "react-icons/hi";
+import ResponsiveMenu from './ResponsiveMenu'
+
 
 const Navbar = ({ DarkMode, toggleDarkMode }) => {
+const [showMenu, setShowMenu] = useState(false);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
-    <nav className="bg-white dark:text-white    dark:bg-gray-800 text-gray-800 shadow-md  py-4 flex items-center justify-between px-20">
+
+
+    <nav className="bg-white dark:text-white    dark:bg-gray-800 text-gray-800 shadow-md  py-4 flex items-center justify-between px-4 md:px-20">
+     {/* Mobile Hamburger Menu */}
+              <div className="sm:hidden block">
+                {showMenu ? (
+                  <HiMenuAlt1
+                    onClick={toggleMenu}
+                    className="cursor-pointer transitionn-all hover:text-blue-400"
+                    size={30}
+                  />
+                ) : (
+                  <HiMenuAlt1
+                    onClick={toggleMenu}
+                    className="cursor-pointer transitionn-all hover:text-blue-400"
+                    size={30}
+                  />
+                )}
+                  <ResponsiveMenu setShowMenu={setShowMenu} showMenu={showMenu} />
+              </div>
+
       {/* Logo atau Judul */}
-      <h1 className="text-2xl font-bold tracking-wide">Chatbot Akademik</h1>
+      <h1 className="md:text-2xl text-xl sm:ml-0 ml-3 font-bold tracking-wide">Chatbot Akademik</h1>
 
       {/* Menu Navigasi */}
-      <ul className="flex gap-18 dark:text-white  md:text-base">
+      <ul className="hidden sm:flex lg:gap-18 md:gap-8 gap-4  dark:text-white  md:text-[15px] sm:text-[13px]">
         <li className="hover:text-blue-500 cursor-pointer transition">
           Beranda
         </li>
@@ -18,13 +47,13 @@ const Navbar = ({ DarkMode, toggleDarkMode }) => {
           Tentang
         </li>
       </ul>
-      <div className="flex justify-center items-center gap-x-9">
-        <button className=" dark:text-gray-100 dark:hover:bg-blue-500 rounded-2xl hover:text-white-300 bg-indigo-600 hover:bg-blue-600 text-white w-22 h-10">
+
+      <div className=" flex justify-center items-center gap-x-9">
+        <button className="sm:block hidden dark:text-gray-100 dark:hover:bg-blue-500 rounded-2xl hover:text-white-300 bg-indigo-600 hover:bg-blue-600 text-white lgd:w-22 w-18 h-10">
           Login
         </button>
 
- 
-      {/* button darkmode */}
+        {/* button darkmode */}
         <button
           id="theme-toggle"
           title="Toggle light & dark"
@@ -47,7 +76,7 @@ const Navbar = ({ DarkMode, toggleDarkMode }) => {
           >
             {DarkMode ? (
               // bulan
-         
+
               <path
                 fill="currentColor"
                 d="m20 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21  12.79z"
@@ -70,6 +99,7 @@ const Navbar = ({ DarkMode, toggleDarkMode }) => {
           </svg>
         </button>
       </div>
+        <ResponsiveMenu setShowMenu={setShowMenu} showMenu={showMenu} />
     </nav>
   );
 };
