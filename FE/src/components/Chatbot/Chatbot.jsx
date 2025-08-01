@@ -6,10 +6,7 @@ import axios from "axios";
 import { GeminiApi } from "../../config/api";
 import { FLASK_URL } from "../../config/api";
 
-
-
 export default function ChatBot({ isOpen, setIsOpen }) {
-  
   const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState([
     { type: "bot", text: "Halo! Ada yang bisa saya bantu hari ini?" },
@@ -63,13 +60,19 @@ export default function ChatBot({ isOpen, setIsOpen }) {
       {isOpen && (
         <div
           className={`fixed bottom-24  right-6 ${
-            isExpanded ? "w-[70vw] max-h-[80vh]" : "w-80 max-h-[70vh]"
+            isExpanded ? "w-[70vw] max-h-[80vh]" : "w-100 max-h-[70vh]"
           } bg-white border border-slate-300 rounded-xl shadow-xl flex flex-col overflow-hidden transition-all duration-300 z-40`}
         >
           <div className="bg-slate-100 dark:bg-gray-800 px-4 py-3 flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <img src={Botimg} className="w-8 h-8 rounded-full border-0  dark:border-white/10 dark:bg-black/30 p-1" alt="Bot" />
-              <span className="font-medium dark:text-white text-slate-800">ChatBot</span>
+              <img
+                src={Botimg}
+                className="w-8 h-8 rounded-full border-0  dark:border-white/10 dark:bg-black/30 p-1"
+                alt="Bot"
+              />
+              <span className="font-medium dark:text-white text-slate-800">
+                ChatBot
+              </span>
             </div>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -117,7 +120,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
             ))}
           </div>
 
-          <div className="border-t border-slate-200 p-3 text-black bg-white dark:text-white dark:bg-gray-950">
+          <div className="border-t border-slate-200/30 p-3 text-black bg-white dark:text-white dark:bg-gray-950">
             <div className="flex gap-2 flex-wrap mb-2">
               <button
                 onClick={() => sendQuick("Jadwal KRS")}
@@ -143,7 +146,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
                 ref={inputRef}
                 type="text"
                 placeholder="Tulis pertanyaan..."
-                className="flex-1 border border-slate-300 px-3 py-2 rounded-l-md text-sm outline-none focus:ring-2 focus:ring-indigo-400"
+                className="flex-1 border  border-slate-300/30 px-3 py-2 rounded-l-md text-sm outline-none focus:ring-2 focus:ring-indigo-400"
               />
               <button
                 onClick={sendMessage}
