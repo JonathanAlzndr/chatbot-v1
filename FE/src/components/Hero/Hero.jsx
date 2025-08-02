@@ -7,7 +7,7 @@ const Hero = ({openChat}) => {
   
 
   return (
-    <section className="    grid grid-cols-2 px-4 md:px-20 sm:px-8 justify-center items-center bg-gradient-to-br py-20 text-center">
+    <section className="    grid grid-cols-1  xl:px-28  sm:grid sm:grid-cols-2 px-4 md:px-20 sm:px-8 justify-center items-center bg-gradient-to-br py-20 text-center h-[90vh]">
       <div className="  max-w-3xl mx-auto  sm:px-4 px-1 text-start ">
         <h1 className="sm:text-4xl text-2xl md:text-5xl font-bold  mb-4">
           Chatbot Pembimbing Akademik
@@ -19,7 +19,7 @@ const Hero = ({openChat}) => {
             </div>
 
       <div className="flex justify-center items-center">
-        <img className='max-h-[400px]' src={Botimg} alt="ChatBot"/>
+        <img className='max-h-[400px] h-52 sm:h-80' src={Botimg} alt="ChatBot"/>
       </div>
 
     </section>

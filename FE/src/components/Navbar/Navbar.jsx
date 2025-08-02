@@ -13,7 +13,7 @@ const [showMenu, setShowMenu] = useState(false);
   return (
 
 
-    <nav className="bg-white dark:text-white    dark:bg-gray-800 text-gray-800 shadow-md  py-4 flex items-center justify-between px-4 md:px-20">
+    <nav className=" bg-white dark:text-white    dark:bg-gray-800 text-gray-800 shadow-md  py-4 flex items-center justify-between px-4 md:px-20  xl:px-28">
      {/* Mobile Hamburger Menu */}
               <div className="sm:hidden block">
                 {showMenu ? (
@@ -36,7 +36,7 @@ const [showMenu, setShowMenu] = useState(false);
       <h1 className="md:text-2xl text-xl sm:ml-0 ml-3 font-bold tracking-wide">Chatbot Akademik</h1>
 
       {/* Menu Navigasi */}
-      <ul className="hidden sm:flex lg:gap-18 md:gap-8 gap-4  dark:text-white  md:text-[15px] sm:text-[13px]">
+      <ul className="hidden sm:flex lg:gap-25 md:gap-8 gap-4  dark:text-white  md:text-[15px] sm:text-[13px]">
         <li className="hover:text-blue-500 cursor-pointer transition">
           Beranda
         </li>

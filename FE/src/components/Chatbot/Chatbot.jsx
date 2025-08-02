@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { MessageCircle, Send, Maximize } from "react-feather";
+import { HiOutlineX } from "react-icons/hi";
 import Botimg from "../../assets/gambar/chatbot.png";
 import Profilmg from "../../assets/gambar/profil.png";
 import axios from "axios";
@@ -60,7 +61,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
       {isOpen && (
         <div
           className={`fixed bottom-24  right-6 ${
-            isExpanded ? "w-[70vw] max-h-[80vh]" : "w-100 max-h-[70vh]"
+            isExpanded ? "w-[70vw] max-h-[76vh]" : "sm:w-100 w-70  max-h-[60vh]"
           } bg-white border border-slate-300 rounded-xl shadow-xl flex flex-col overflow-hidden transition-all duration-300 z-40`}
         >
           <div className="bg-slate-100 dark:bg-gray-800 px-4 py-3 flex justify-between items-center">
@@ -76,10 +77,11 @@ export default function ChatBot({ isOpen, setIsOpen }) {
             </div>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-slate-500 hover:text-indigo-600"
+              className="hidden sm:block  text-slate-500 hover:text-indigo-600"
             >
               <Maximize size={18} />
             </button>
+            <HiOutlineX onClick={() => setIsOpen(!isOpen)} className="transition-all duration-300 sm:hidden hover:text-indigo-600" />
           </div>
 
           <div
