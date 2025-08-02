@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from './ResponsiveMenu'
-
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ DarkMode, toggleDarkMode }) => {
 const [showMenu, setShowMenu] = useState(false);
@@ -49,9 +49,11 @@ const [showMenu, setShowMenu] = useState(false);
       </ul>
 
       <div className=" flex justify-center items-center gap-x-9">
+        <Link>
         <button className="sm:block hidden dark:text-gray-100 dark:hover:bg-blue-500 rounded-2xl hover:text-white-300 bg-indigo-600 hover:bg-blue-600 text-white lgd:w-22 w-18 h-10">
           Login
         </button>
+        </Link>
 
         {/* button darkmode */}
         <button
