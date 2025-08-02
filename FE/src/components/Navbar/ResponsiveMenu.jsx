@@ -12,11 +12,11 @@ const navbarLinks = [
   },
   {
     name: "Panduan",
-    link: "/",
+    link: "/panduan",
   },
   {
     name: "Tentang",
-    link: "/",
+    link: "/tentang",
   },
 ];
 
