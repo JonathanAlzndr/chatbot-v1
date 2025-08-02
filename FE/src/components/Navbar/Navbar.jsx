@@ -37,20 +37,27 @@ const [showMenu, setShowMenu] = useState(false);
 
       {/* Menu Navigasi */}
       <ul className="hidden sm:flex lg:gap-25 md:gap-8 gap-4  dark:text-white  md:text-[15px] sm:text-[13px]">
+       <Link to="/">
         <li className="hover:text-blue-500 cursor-pointer transition">
           Beranda
         </li>
+        </Link>
+        <Link to="/panduan">
         <li className="hover:text-blue-500 cursor-pointer transition">
           Panduan
         </li>
+        </Link>
+        <Link to="/tentang">
         <li className="hover:text-blue-500 cursor-pointer transition">
           Tentang
         </li>
+        </Link>
       </ul>
 
       <div className=" flex justify-center items-center gap-x-9">
-        <Link>
-        <button className="sm:block hidden dark:text-gray-100 dark:hover:bg-blue-500 rounded-2xl hover:text-white-300 bg-indigo-600 hover:bg-blue-600 text-white lgd:w-22 w-18 h-10">
+        {/* button login */}
+        <Link to="/login">
+        <button className=" ml-12 sm:ml-0 sm:block hidden dark:text-gray-100 dark:hover:bg-blue-500 rounded-[12px] hover:text-white-300 bg-indigo-600 hover:bg-blue-600 text-white sm:text-[12px] lg:w-18 w-18 h-8">
           Login
         </button>
         </Link>
@@ -62,7 +69,7 @@ const [showMenu, setShowMenu] = useState(false);
           aria-label={DarkMode ? "dark" : "light"}
           aria-live="polite"
           onClick={toggleDarkMode}
-          className={`w-12 h-12  border-gray-200 flex justify-center items-center rounded-full 
+          className={`sm:w-12 sm:h-12  w-10 h-10 border-gray-200 flex justify-center items-center rounded-full 
     transition-all duration-500 shadow-inner border 
     ${DarkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}
         >

@@ -75,13 +75,15 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
         </div>
 
         {/* button login */}
-        <button className="hover:text-blue-700  transition-all duration-300 gap-3 flex justify-center items-center">
-          {" "}
-          <div className="pt-1">
-            <BiLogIn className="" />
-          </div>{" "}
-          Login
-        </button>
+        <Link to="/login">
+          <button className="hover:text-blue-700  transition-all duration-300 gap-3 flex justify-center items-center">
+            {" "}
+            <div className="pt-1">
+              <BiLogIn className="" />
+            </div>{" "}
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );
