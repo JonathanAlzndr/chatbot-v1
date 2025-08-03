@@ -5,7 +5,7 @@ import Botimg from "../../assets/gambar/chatbot.png";
 import Profilmg from "../../assets/gambar/profil.png";
 import axios from "axios";
 import { GeminiApi } from "../../config/api";
-import { FLASK_URL } from "../../config/api";
+import { FLASK_URL } from "../.././.env";
 
 export default function ChatBot({ isOpen, setIsOpen }) {
   const [isExpanded, setIsExpanded] = useState(false);
