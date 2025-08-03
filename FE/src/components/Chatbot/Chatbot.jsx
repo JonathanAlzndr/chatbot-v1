@@ -28,6 +28,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
     try {
       console.log("Mengirim POST ke /predict dengan:", text);
 
+
       const response = await axios.post(FLASK_URL, { message: text });
 
       const reply = response.data.response || "Maaf, tidak ada jawaban.";

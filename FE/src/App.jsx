@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 import Chatbot from "./components/Chatbot/Chatbot";
 import Hero from "./components/Hero/Hero";
 import Login from "./pages/Login";

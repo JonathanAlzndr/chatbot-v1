@@ -5,7 +5,7 @@ const tentang = () => {
     <section className="    grid grid-cols-1  xl:px-28  sm:grid sm:grid-cols-2 px-4 md:px-20 sm:px-8 justify-center items-center bg-gradient-to-br py-20 text-center h-[90vh]">
       <div className="  max-w-3xl mx-auto  sm:px-4 px-1 text-start ">
         Chatbot ini dikembangkan sebagai solusi digital untuk mempermudah akses
-        informasi bagi mahasiswa Universitas Katolik De La Salle. Dengan
+        informasi bagi mahasiswa . Dengan
         memanfaatkan teknologi kecerdasan buatan, chatbot mampu menjawab
         berbagai pertanyaan seputar kegiatan akademik, layanan kampus, dan
         informasi penting lainnya secara otomatis dan responsif. Inisiatif ini
