@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+@theme {
+  --font-poppins: "Poppins", sans-serif; 
+}
+
+
+/* index.css atau App.css */
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+[data-theme="dark"] .scrollable {
+  scrollbar-color: #555 #1f2937;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 9999px;
+}
+
+[data-theme="dark"] .scrollable::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
