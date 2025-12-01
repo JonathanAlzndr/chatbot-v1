@@ -78,7 +78,7 @@ export default function ChatBot({ isOpen, setIsOpen }) {
               alt="Bot"
             />
             <span className="font-medium dark:text-white text-slate-800">
-              ChatBot
+             B I M A
             </span>
           </div>
           {/* button ++ dan X */}

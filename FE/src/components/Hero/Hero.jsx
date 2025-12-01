@@ -10,7 +10,7 @@ const Hero = ({openChat}) => {
     <section className="    grid grid-cols-1  xl:px-28  sm:grid sm:grid-cols-2 px-4 md:px-20 sm:px-8 justify-center items-center bg-gradient-to-br py-20 text-center h-[90vh]">
       <div className="  max-w-3xl mx-auto  sm:px-4 px-1 text-start ">
         <h1 className="sm:text-4xl text-2xl md:text-5xl font-bold  mb-4">
-          Chatbot Pembimbing Akademik
+         Bimbingan Mahasiswa
         </h1>
         <p className=" sm:text-lg text-[13px]   mb-6">
           Dapatkan bantuan akademik 24/7 — dari informasi KRS, jadwal kuliah, hingga pertanyaan seputar dosen pembimbing.
