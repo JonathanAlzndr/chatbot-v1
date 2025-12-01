@@ -11,15 +11,13 @@ factory_stem = StemmerFactory()
 stemmer = factory_stem.create_stemmer()
 
 def clean_text(text):
-    text = text.lower() # dibuat jadi huruf kecil semua
+    text = text.lower() 
     text = re.sub(r"\d+", "", text)
     text = text.translate(str.maketrans("", "", string.punctuation))
     tokens = text.strip().split()
 
-    # Hapus stopwords
     filtered_tokens = [word for word in tokens if word not in stopwords_sastrawi]
 
-    # Stemming tiap kata
     stemmed_tokens = [stemmer.stem(word) for word in filtered_tokens]
 
     return " ".join(stemmed_tokens)
