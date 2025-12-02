@@ -1,56 +1,16 @@
-🧠 Frontend Chatbot - React + Vite + Tailwind
+# React + Vite
 
-Project ini adalah antarmuka frontend untuk chatbot Naive Bayes.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-===========================================
-🔧 LANGKAH-LANGKAH MENJALANKAN FRONTEND
-===========================================
+Currently, two official plugins are available:
 
-1. CLONE PROJECT (jika belum punya)
-------------------------------------
-git clone https://github.com/JonathanAlzndr/chatbot-v1.git
-cd chatbot-v1/FE
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-2. INSTALL DEPENDENSI
------------------------
-npm install
+## React Compiler
 
-3. JALANKAN PROJECT
------------------------
-npm run dev
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-4. AKSES DI BROWSER
----------------------
-http://localhost:5173
+## Expanding the ESLint configuration
 
-
-===========================================
-🔌 MENGHUBUNGKAN KE BACKEND (API)
-===========================================
-
-Pastikan backend  sudah berjalan di:
-http://localhost:5000
-
-Frontend akan mengirim POST ke:
-http://localhost:5000/predict
-
-Contoh respons:
-{
-  "intent": "greeting",
-  "response": "Hai! Ada yang bisa saya bantu?"
-}
-
-
-==========================================
-📁 STRUKTUR DASAR FOLDER
-==========================================
-
-chatbot-v1/
-├── FE/           <-- folder frontend
-│   ├── src/
-│   ├── index.html
-│   └── ...
-└── BE/           <-- folder backend (Flask)
-
-===========================================
- 
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
