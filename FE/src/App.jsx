@@ -2,12 +2,13 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Beranda from "./Pages/Beranda";
 import Daftar from "./pages/Daftar";
-import Login from "./pages/Login";
-import ChatUser from "./pages/ChatUser";
+import Login from "./Pages/Login";
+import ChatUser from "./Pages/ChatUser";
 import DasborAdmin from "./pages/DasborAdmin";
 import Profil from "./pages/Profil";
 import LayoutUser from "./Layout/LayoutUser";
-import AdminLayout from "./Layout/AdminLayout"; 
+import AdminLayout from "./Layout/AdminLayout";
+import History from "./Pages/History";
 
 const App = () => {
   return (
@@ -20,13 +21,15 @@ const App = () => {
           <Route path="/login" element={<Login />} />
 
           {/* Rute user */}
-          <Route element={<LayoutUser />}>
-            <Route path="/chat" element={<ChatUser />} />
-            <Route path="/profil" element={<Profil />} />
+          <Route path="/user" element={<LayoutUser />}>
+           <Route index element={<ChatUser />} /> 
+            <Route path="chat" element={<ChatUser />} />
+            <Route path="profil" element={<Profil />} />
+            <Route path="history" element={<History />} />
           </Route>
           {/* Rute Admin */}
-          <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<DasborAdmin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="dasbor" element={<DasborAdmin />} />
           </Route>
         </Routes>
       </BrowserRouter>
