@@ -33,7 +33,7 @@ const [showMenu, setShowMenu] = useState(false);
               </div>
 
       {/* Logo atau Judul */}
-      <h1 className="md:text-2xl text-xl sm:ml-0 ml-3 font-bold tracking-wide">Chatbot Akademik</h1>
+      <h1 className="md:text-2xl text-xl sm:ml-0 ml-3 font-bold tracking-wide">B I M A</h1>
 
       {/* Menu Navigasi */}
       <ul className="hidden sm:flex lg:gap-25 md:gap-8 gap-4  dark:text-white  md:text-[15px] sm:text-[13px]">
