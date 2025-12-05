@@ -5,7 +5,7 @@ def create_app():
     app = Flask(__name__)
     CORS(app)
 
-    from .routes import main
+    from .routes.student import main
     app.register_blueprint(main)
 
     return app

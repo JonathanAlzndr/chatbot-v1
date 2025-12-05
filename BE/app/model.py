@@ -23,4 +23,4 @@ elif 'pattern' in df.columns:
 else:
     raise ValueError("Kolom 'Pertanyaan' atau 'pattern' tidak ditemukan di Excel!")
 
-print("✅ Model & Data Loaded!")
+print("Model & Data Loaded!")
