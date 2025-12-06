@@ -1,15 +1,45 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import Sidebar from "../components/SideBar";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Logout from "../components/Logout";
+import LoadingChat from "../components/LoadingChat";
+
 const AdminLayout = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setIsModalOpen(false);
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate("/");
+    }, 2000);
+  };
+
+
   return (
-     <div className='h-full'>
-      <Navbar />
+    <div className="h-full flex">
+      <Sidebar />
+        <Logout
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleLogout}
+      />
+        <LoadingChat
+        isLoading={isLoading}
+        message="Sedang keluar dari akun, tunggu sebentar..."
+      />
+
       <div className="p-4">
         <Outlet />
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default AdminLayout
+export default AdminLayout;

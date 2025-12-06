@@ -9,6 +9,7 @@ import Profil from "./pages/Profil";
 import LayoutUser from "./Layout/LayoutUser";
 import AdminLayout from "./Layout/AdminLayout";
 import History from "./Pages/History";
+import ProfilAdmin from "./Pages/ProfilAdmin";
 
 const App = () => {
   return (
@@ -22,13 +23,15 @@ const App = () => {
 
           {/* Rute user */}
           <Route path="/user" element={<LayoutUser />}>
-           <Route index element={<ChatUser />} /> 
+            <Route index element={<ChatUser />} />
             <Route path="chat" element={<ChatUser />} />
             <Route path="profil" element={<Profil />} />
             <Route path="history" element={<History />} />
           </Route>
           {/* Rute Admin */}
           <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<ProfilAdmin />} />
+            <Route path="profiladmin" element={<ProfilAdmin />} />
             <Route path="dasbor" element={<DasborAdmin />} />
           </Route>
         </Routes>
