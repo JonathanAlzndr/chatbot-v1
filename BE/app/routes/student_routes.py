@@ -1,12 +1,13 @@
 from flask import Blueprint, request, jsonify
-from ..model import model, vectorizer, df
-from ..utils import clean_text
+from ..utils.model import model, vectorizer, df
+from ..utils.preprocessing import clean_text
 from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
+from flask_jwt_extended import jwt_required
 
-main = Blueprint('main', __name__)
+student_bp = Blueprint('student', __name__, url_prefix='/api/student')
 
-@main.route('/chat', methods=['POST'])
+@student_bp.route('/chat', methods=['POST'])
+@jwt_required()
 def predict():
     data = request.get_json()
     user_input = data.get('message', '')
@@ -45,3 +46,13 @@ def predict():
         'intent': pred_intent, 
         'response': final_response
     })
+
+@student_bp.route('/profile', methods=['GET'])
+@jwt_required()
+def profile():
+    pass
+
+@student_bp.route('/profile', methods=['PATCH'])
+@jwt_required()
+def update_profile():
+    pass
