@@ -1,12 +1,12 @@
 from flask import Blueprint, request, jsonify
-from .model import model, vectorizer, df
-from .utils import clean_text
+from ..model import model, vectorizer, df
+from ..utils import clean_text
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 main = Blueprint('main', __name__)
 
-@main.route('/predict', methods=['POST'])
+@main.route('/chat', methods=['POST'])
 def predict():
     data = request.get_json()
     user_input = data.get('message', '')
@@ -35,7 +35,7 @@ def predict():
     similarities = cosine_similarity(user_vec, subset_vec)
 
     if similarities.max() < 0.2:
-        return jsonify({'response': 'Maaf, pertanyaan kurang jelas. Bisa diperjelas?'})
+        return jsonify({'intent': 'unknown','response': 'Maaf, pertanyaan kurang jelas. Bisa diperjelas?'})
 
     best_idx = similarities.argmax()
     

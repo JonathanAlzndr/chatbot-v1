@@ -3,7 +3,6 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 import re
 
-# Inisialisasi stopword remover & stemmer
 factory_stop = StopWordRemoverFactory()
 stopwords_sastrawi = set(factory_stop.get_stop_words())
 
