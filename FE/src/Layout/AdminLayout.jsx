@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logout from "../components/Logout";
 import LoadingChat from "../components/LoadingChat";
+import Navbar from "../components/Navbar";
 
 const AdminLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,8 +36,11 @@ const AdminLayout = () => {
         message="Sedang keluar dari akun, tunggu sebentar..."
       />
 
-      <div className="p-4">
-        <Outlet />
+       <div className=" w-full">
+        <Navbar  onLogoutClick={() => setIsModalOpen(true)} />
+        <div className="">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

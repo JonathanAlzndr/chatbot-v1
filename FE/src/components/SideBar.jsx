@@ -1,42 +1,40 @@
 import React from "react";
-import { LogOut, User, Menu, ArrowLeft } from "lucide-react";
-import { FaPlus } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { LogOut, User } from "lucide-react";
+import { FaPlus, FaUserCircle } from "react-icons/fa";
 import { IoChatbubbleOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
+import { MdManageAccounts } from "react-icons/md";
 
 const Sidebar = ({ onLogoutClick }) => {
-  const role = localStorage.getItem("role"); // ambil role dari login
-  const chatHistory = [
-    "Apa itu IPK?",
-    "Cara daftar KP",
-    "Persyaratan Skripsi",
-    "Jadwal Dosen Pembimbing",
-    "Prosedur Cuti",
-    "Informasi Beasiswa",
-  ];
+  const role = localStorage.getItem("role");
+
+  const nama = localStorage.getItem("nama") || "Tidak diketahui";
+  const nim = localStorage.getItem("nim"); // hanya user yg punya nim
+ 
+
+  const linkStyle = ({ isActive }) =>
+    `flex items-center p-3 rounded-lg transition-colors ${
+      isActive
+        ? "bg-blue-600 text-white"
+        : "text-gray-700 hover:bg-gray-200"
+    }`;
 
   return (
-    <div className="flex flex-col w-64 h-screen bg-gray-50 border-r border-gray-200 p-4">
+    <div className="fixed top-0 left-0 flex flex-col w-64 h-screen bg-gray-50 border-r border-gray-200 p-4">
       <div className="flex justify-between items-center mb-6">
         <span className="font-bold text-xl text-blue-700">B I M A</span>
-        <button className="text-gray-500 hover:text-gray-700 p-1 rounded">
-          <ArrowLeft size={20} />
-        </button>
       </div>
 
       {role === "mahasiswa" && (
-        <button className="flex items-center text-white justify-center p-2 mb-4 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
-          <FaPlus size={20} className="mr-2 " />
+        <button className="flex items-center text-white justify-center p-2 mb-4 bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm">
+          <FaPlus size={20} className="mr-2" />
           <span>Chat Baru</span>
         </button>
       )}
 
       <nav className="flex-grow space-y-2">
         {role === "mahasiswa" && (
-          <NavLink
-            to="/user/chat"
-            className="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-          >
+          <NavLink to="/user/chat" className={linkStyle}>
             <IoChatbubbleOutline size={20} className="mr-3" />
             <span>Chat</span>
           </NavLink>
@@ -44,69 +42,35 @@ const Sidebar = ({ onLogoutClick }) => {
 
         <NavLink
           to={role === "admin" ? "/admin/profiladmin" : "/user/profil"}
-          className="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+          className={linkStyle}
         >
           <User size={20} className="mr-3" />
           <span>Profil</span>
         </NavLink>
 
-        {role === "mahasiswa" && (
-          <details open className="group">
-            <summary className="flex items-center justify-between p-3 text-gray-700 rounded-lg cursor-pointer hover:bg-gray-200 transition-colors">
-              <div className="flex items-center">
-                <Menu size={20} className="mr-3" />
-                <span>History Chat</span>
-              </div>
-              <svg
-                className="w-4 h-4 transition-transform duration-200 group-open:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </summary>
-
-            <ul className="pl-4 mt-2 space-y-1 text-sm">
-              {chatHistory.map((chat, index) => (
-                <li key={index}>
-                  <NavLink
-                    to="/user/history"
-                    className="block p-2 text-gray-600 truncate rounded-lg hover:bg-gray-100"
-                  >
-                    {chat}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </details>
-        )}
-
         {role === "admin" && (
-          <>
-            <NavLink
-              to="/admin/dasbor"
-              className="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              <span>Kelola Akun</span>
-            </NavLink>
-          
-          </>
+          <NavLink to="/admin/dasbor" className={linkStyle}>
+            <MdManageAccounts size={20} className="mr-3" />
+            <span>Kelola Akun</span>
+          </NavLink>
         )}
       </nav>
 
-      <button
-        onClick={onLogoutClick}
-        className="flex items-center p-3 text-red-600 rounded-lg hover:bg-red-50 transition-colors mt-4 border-t border-gray-200"
-      >
-        <LogOut size={20} className="mr-3" />
-        <span>Keluar</span>
-      </button>
+      {/* BAGIAN PROFIL BAWAH OTOMATIS */}
+      <div className="flex justify-start gap-5 mt-5 p-3 bg-white  rounded-xl shadow">
+        <FaUserCircle size={40} className="text-gray-500" />
+        <div>
+          <p className="font-semibold">{nama}</p>
+
+          {role === "mahasiswa" && (
+            <span className="text-[13px] text-gray-600">{nim}</span>
+          )}
+
+          {role === "admin" && (
+            <span className="text-[13px] text-gray-600">{role}</span>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

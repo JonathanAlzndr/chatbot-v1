@@ -2,7 +2,7 @@ import React from "react";
 
 const Profil = () => {
   return (
-    <div className="p-20 flex flex-col gap-10">
+    <div className="p-20 flex flex-col ml-55 mt-5 w-full gap-10">
       <h1 className="font-bold text-3xl">Halo , Onxxx xxx </h1>
       <div>
         {/* Koatak PRofil */}
@@ -28,7 +28,7 @@ const Profil = () => {
             </section>
             <section className=" flex justify-between  pb-2 border-gray-300  ">
               <p>Status Akun</p>
-              <p className=" p-1 rounded-full w-30 text-center bg-green-200">Aktif</p>
+              <p className=" p-1 rounded-full' w-30 text-center bg-green-200">Aktif</p>
             </section>
           </div>
         </div>
