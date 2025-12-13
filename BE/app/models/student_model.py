@@ -10,4 +10,4 @@ class Student(db.Model):
     kata_sandi = db.Column(db.String(255), nullable=False) # Disimpan dalam bentuk Hash
     nomor_whatsapp = db.Column(db.String(20), nullable=True)
     status_akun = db.Column(db.String(20), default='Aktif') # Contoh: 'Aktif', 'Nonaktif'
-    riwayat_logs = db.relationship('Riwayat', backref='mahasiswa', lazy=True)
+    riwayat_logs = db.relationship('History', backref='mahasiswa', lazy=True)

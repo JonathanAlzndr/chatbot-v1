@@ -1,5 +1,5 @@
 from flask_jwt_extended import create_access_token
-from ..repositories.admin_repository import get_admin_by_username, create_admin_account, update_admin_account, update_student_status
+from ..repositories.admin_repository import get_admin_by_username, create_admin_account, update_student_status
 from ..utils.security import verify_password, hash_password
 from datetime import timedelta
 from ..repositories.admin_repository import get_all_students
