@@ -7,8 +7,6 @@ from datetime import timedelta
 def student_register(studentId, full_name, email, password, whatsapp_number):
     if get_student_by_student_id(studentId):
         return {"msg": "student ID already exists"}, 400
-    if get_student_by_student_id(email):
-        return {"msg": "email already exists"}, 400
     hashed_password = hash_password(password)
     create_student_account(studentId, full_name, email, hashed_password, whatsapp_number)
     return {"msg": "User registered succesfully"}, 201
@@ -16,7 +14,7 @@ def student_register(studentId, full_name, email, password, whatsapp_number):
 
 def student_login(studentId, password):
     student = get_student_by_student_id(studentId)
-    if not student or not verify_password(password, student.password):
+    if not student or not verify_password(password, student.kata_sandi):
         return {
             "msg": "Invalid username or password"
         }, 401
