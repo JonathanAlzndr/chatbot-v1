@@ -1,13 +1,15 @@
-from repositories.student_repository import get_student_by_studentId, create_student_account
+from repositories.student_repository import get_student_by_student_id, create_student_account, update_student_account
 from utils.security import hash_password, verify_password
 from flask_jwt_extended import create_access_token
+from datetime import timedelta
 
 def student_register(studentId, full_name, email, password, whatsapp_number):
     if get_student_by_student_id(studentId):
         return {"msg": "student ID already exists"}, 400
-    
+    if get_student_by_student_id(email):
+        return {"msg": "email already exists"}, 400
     hashed_password = hash_password(password)
-    create_student_account(studentId, full_name, email, password, whatsapp_number)
+    create_student_account(studentId, full_name, email, hashed_password, whatsapp_number)
     return {"msg": "User registered succesfully"}, 201
     
 
@@ -28,5 +30,37 @@ def student_login(studentId, password):
         "msg": "success",
         "token": token,
         "role": "Student"
+    }, 200
+
+def get_student_profile(studentId): 
+    student = get_student_by_student_id(studentId)
+    if not student:
+        return {
+            "msg": "Student not found"
+        }, 404
+
+    student_data = {
+        "studentId": student.nomor_induk_mahasiswa,
+        "fullName": student.nama_lengkap,
+        "email": student.email,
+        "whatsappNumber": student.nomor_whatsapp,
+        "accountStatus": student.status_akun,
+        "password": student.kata_sandi
+    }
+
+    return {
+        "msg": "success",
+        "student": student_data
+    }, 200
+
+def update_student_account(studentId, full_name=None, email=None, password=None, whatsapp_number=None):
+    student = update_student_account(studentId, full_name, email, password, whatsapp_number)
+    if not student:
+        return {
+            "msg": "Student not found"
+        }, 404
+
+    return {
+        "msg": "Student account updated successfully"
     }, 200
         

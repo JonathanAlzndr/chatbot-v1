@@ -62,7 +62,7 @@ Student
 {
     "msg": "User registered succesfully"
 }
-```
+```   
 
 #### Response Body (Failed) :
 ```json 
@@ -83,16 +83,7 @@ Student
 
 ### Endpoint : `GET /api/student/profile`
 
-#### Response Body (Success) :
-```json
-{
-    "msg": "success",
-    "token": "jwt",
-    "role": "Role"
-}
-```
-
-#### Request Body (Success):
+#### Response Body (Success):
 ```json
 {   
     "fullName": "John Doe",

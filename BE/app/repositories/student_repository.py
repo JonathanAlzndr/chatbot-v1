@@ -10,3 +10,20 @@ def create_student_account(studentId, full_name, email, password, whatsapp_numbe
     db.session.add(new_student)
     db.session.commit()
     return new_student
+
+def update_student_account(studentId, full_name=None, email=None, password=None, whatsapp_number=None):
+    student = get_student_by_student_id(studentId)
+    if not student:
+        return None
+
+    if full_name:
+        student.nama_lengkap = full_name
+    if email:
+        student.email = email
+    if password:
+        student.kata_sandi = password
+    if whatsapp_number:
+        student.nomor_whatsapp = whatsapp_number
+
+    db.session.commit()
+    return student
