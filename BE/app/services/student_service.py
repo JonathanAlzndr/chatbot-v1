@@ -11,7 +11,6 @@ def student_register(studentId, full_name, email, password, whatsapp_number):
     return {"msg": "User registered succesfully"}, 201
     
 
-
 def student_login(studentId, password):
     student = get_student_by_student_id(studentId)
     if not student or not verify_password(password, student.password):

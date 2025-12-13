@@ -14,9 +14,7 @@ def student_login(data):
     studentId = data.get('studentId')
     password = data.get('password')
 
-    return student_login(studentId, password)
-
- 
+    return student_login(studentId, password) 
 
 @auth_bp.route('student/register', methods=['POST'])
 def student_register(data):
