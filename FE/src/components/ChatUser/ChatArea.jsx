@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
+import axios from "axios";
+
 
 const ChatArea = () => {
   document.body.style.overflow = "hidden"; // FIX UTAMA
@@ -7,20 +9,35 @@ const ChatArea = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+const handleSend = async () => {
+  if (!input.trim()) return;
 
-    const userMsg = { from: "user", text: input };
-    const newMessages = [...messages, userMsg];
+  const userMsg = { from: "user", text: input };
+  setMessages((prev) => [...prev, userMsg]);
+
+  try {
+    const res = await axios.post(
+      "http://localhost:5000/api/student/chat",
+      { message: input }
+    );
 
     const botMsg = {
       from: "bot",
-      text: "Ini respon dari BIMA untuk: " + input
+      text: res.data.response
     };
 
-    setMessages([...newMessages, botMsg]);
-    setInput("");
-  };
+    setMessages((prev) => [...prev, botMsg]);
+  } catch (error) {
+    const botMsg = {
+      from: "bot",
+      text: "Maaf, terjadi kesalahan."
+    };
+    setMessages((prev) => [...prev, botMsg]);
+  }
+
+  setInput("");
+};
+
 
   return (
     <div className="flex flex-col ml-[480px] pt-[90px] mt-15 p-8 h-screen overflow-hidden">

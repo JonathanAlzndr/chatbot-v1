@@ -1,6 +1,6 @@
 # User API Specification
 
---- 
+---
 
 ## Login Student
 
@@ -13,26 +13,29 @@ Student
 ### Endpoint : `POST /api/auth/student/login`
 
 #### Request Body :
+
 ```json
 {
-    "studentId": "19013001",
-    "password": "secret",
-} 
+  "studentId": "19013001",
+  "password": "secret"
+}
 ```
 
 #### Response Body (Success) :
+
 ```json
 {
-    "msg": "success",
-    "token": "jwt",
-    "role": "Role"
+  "msg": "success",
+  "token": "jwt",
+  "role": "Role"
 }
 ```
 
 #### Response Body (Failed) :
-```json 
+
+```json
 {
-    "msg": "Invalid username or password"
+  "msg": "Invalid username or password"
 }
 ```
 
@@ -47,27 +50,30 @@ Student
 ### Endpoint : `POST /api/auth/student/register`
 
 #### Request Body :
+
 ```json
 {
-    "fullName": "John Doe",
-    "studentId": "19013005",
-    "email": "1234@gmail.com",
-    "whatsappNumber": "+62855123443",
-    "password": "secret",
-} 
+  "fullName": "John Doe",
+  "studentId": "19013005",
+  "email": "1234@gmail.com",
+  "whatsappNumber": "+62855123443",
+  "password": "secret"
+}
 ```
 
 #### Response Body (Success) :
+
 ```json
 {
-    "msg": "User registered succesfully"
+  "msg": "User registered succesfully"
 }
-```   
+```
 
 #### Response Body (Failed) :
-```json 
+
+```json
 {
-    "msg": "student ID already exists"
+  "msg": "student ID already exists"
 }
 ```
 
@@ -84,13 +90,14 @@ Student
 ### Endpoint : `GET /api/student/profile`
 
 #### Response Body (Success):
+
 ```json
-{   
-    "fullName": "John Doe",
-    "studentId": "19013005",
-    "email": "1234@gmail.com",
-    "whatsappNumber": "+62855123443",
-    "password": "secret"
+{
+  "fullName": "John Doe",
+  "studentId": "19013005",
+  "email": "1234@gmail.com",
+  "whatsappNumber": "+62855123443",
+  "password": "secret"
 }
 ```
 
@@ -107,24 +114,26 @@ Student
 ### Endpoint : `PATCH /api/student/profile`
 
 #### Request Body :
+
 ```json
 {
-    "fullName": "John Doe",
-    "studentId": "19013005",
-    "email": "1234@gmail.com",
-    "whatsappNumber": "+62855123443",
-    "password": "secret"
+  "fullName": "John Doe",
+  "studentId": "19013005",
+  "email": "1234@gmail.com",
+  "whatsappNumber": "+62855123443",
+  "password": "secret"
 }
 ```
 
 #### Response Body (Success):
+
 ```json
-{   
-    "msg": "Success to update student profile"
+{
+  "msg": "Success to update student profile"
 }
 ```
 
---- 
+---
 
 ## Chat
 
@@ -136,23 +145,27 @@ Student
 
 ### Endpoint : `POST /api/student/chat`
 
-#### Request Body : 
+#### Request Body :
+
 ```json
 {
-    "message": "Halo?"
+  "message": "Halo?"
 }
 ```
 
 #### Response Body (Success):
+
 ```json
 {
-    "intent": "basic",
-    "response": "Hai, saya BIMA pembimbing akademik kamu!"
+  "intent": "basic",
+  "response": "Hai, saya BIMA pembimbing akademik kamu!"
 }
 ```
 
 #### Response Body (Failed):
+
 ```json
 {
-    "msg": "Failed"
+  "msg": "Failed"
 }
+```
