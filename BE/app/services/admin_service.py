@@ -4,6 +4,7 @@ from ..utils.security import verify_password, hash_password
 from datetime import timedelta
 from ..repositories.admin_repository import get_all_students
 from ..repositories.student_repository import get_student_by_student_id   
+from flask import jsonify
 
 def admin_login(username, password):
     admin = get_admin_by_username(username)
@@ -13,16 +14,19 @@ def admin_login(username, password):
         }, 401
     
     token = create_access_token(
-        identity=str(admin.username),
+        identity=str(admin.nama_lengkap),
         additional_claims={"role": "Admin"},
         expires_delta=timedelta(hours=24)
     )
 
-    return {
-        "msg": "success",
-        "token": token,
-        "role": "Admin"
-    }
+    return jsonify({ # <<< PERBAIKAN: Gunakan jsonify
+         "msg": "success",
+        "access_token": token, # PERBAIKAN: Gunakan 'access_token' untuk konsistensi frontend
+        "role": "admin", # lowercase untuk sinkronisasi dengan FE
+        "id_admin": admin.id_admin, # Tambahkan ID admin
+        "email": admin.email, # WAJIB: Kirim email untuk disimpan frontend
+        "nama_lengkap": admin.nama_lengkap # WAJIB: Kirim nama lengkap untuk disimpan frontend
+    }), 200
 
 def admin_register(username, email, password, whatsapp_number):
     if get_admin_by_username(username):

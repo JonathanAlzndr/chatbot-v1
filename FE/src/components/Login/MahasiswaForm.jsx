@@ -13,19 +13,37 @@ const MahasiswaForm = () => {
         studentId: nim,
         password: password,
       });
-
+      
+      // Kunci yang dikirim BE (sesuai file student_service.py Anda) adalah 'token' dan 'role'.
+      // Asumsi BE juga mengirim data profile (nim, nama) seperti sebelumnya.
       if (res.data.msg === "success") {
+        
+        // 1. Ambil 'token' (sesuai BE Anda)
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("role", res.data.role);
+        
+        // 2. Ambil 'role' (sesuai BE Anda, yaitu "Student")
+        // NOTE: Di Sidebar.jsx, kondisinya adalah 'mahasiswa' (huruf kecil).
+        // Kita simpan sebagai lowercase di FE untuk sinkronisasi.
+        localStorage.setItem("role", res.data.role?.toLowerCase() || "mahasiswa"); 
+        
+        // 3. Simpan data profile yang dibutuhkan sidebar
+        localStorage.setItem("nim", res.data.nomor_induk_mahasiswa);
+        localStorage.setItem("nama", res.data.nama_lengkap);
+
         alert("Login Mahasiswa Berhasil!");
-        navigate("/user");
+        
+        // Ganti navigate() dengan window.location.href untuk memaksa refresh
+        window.location.href = "/user/chat"; 
       }
     } catch (error) {
+      // Lebih baik mencetak error ke konsol untuk debugging BE
+      console.error("Login Error:", error.response?.data || error);
       alert("NIM atau password salah");
     }
   };
 
   return (
+    // ... (JSX sisanya tetap sama)
     <>
       <div className="mt-6">
         <h2 className="text-xl font-bold">Masuk Sebagai Mahasiswa</h2>

@@ -3,6 +3,7 @@ from ..repositories.student_repository import (
 from ..utils.security import hash_password, verify_password
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
+from flask import jsonify
 
 def student_register(studentId, full_name, email, password, whatsapp_number):
     if get_student_by_student_id(studentId):
@@ -25,11 +26,16 @@ def student_login(studentId, password):
         expires_delta=timedelta(hours=24)
     )
 
-    return {
+    return jsonify({ # <<< HARUS DIUBAH KE jsonify
         "msg": "success",
         "token": token,
-        "role": "Student"
-    }, 200
+        "role": "Student",
+        
+        # >>> INI DATA YANG HILANG DAN HARUS DITAMBAHKAN <<<
+        "nomor_induk_mahasiswa": student.nomor_induk_mahasiswa,
+        "nama_lengkap": student.nama_lengkap
+        # ----------------------------------------------------
+    }), 200
 
 def get_student_profile(studentId): 
     student = get_student_by_student_id(studentId)
