@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Edit2, Mail, Phone, CheckCircle, X, Save, User } from "lucide-react";
 
-const ProfileAdmin = () => {
+const AdminProfile = () => {
   const [admin, setAdmin] = useState({
     nama: "Bima Alexander",
     email: "bima.alexander@unikadelasalle.ac.id",
     wa: "085211234567",
     status: "Aktif",
-    role: "Admin"
-
+    role: "Super Admin",
+    joinDate: "15 Januari 2024"
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -27,10 +27,14 @@ const ProfileAdmin = () => {
   };
 
   return (
-    <div className="min-h-screen  from-slate-50  to-slate-100 mt-20  ml-60 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-      
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold text-slate-800">Profil Admin</h1>
+          <p className="text-slate-600 mt-1">Kelola informasi akun administrator Anda</p>
+        </div>
+
         {/* Main Card - Landscape Layout */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           {/* Header dengan Background Gradient */}
@@ -70,7 +74,10 @@ const ProfileAdmin = () => {
                   </div>
 
                   <div className="flex gap-3">
-                 
+                    <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-2 text-center">
+                      <p className="text-xs text-blue-600 font-medium">Bergabung Sejak</p>
+                      <p className="text-sm font-bold text-blue-700">{admin.joinDate}</p>
+                    </div>
                     <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-2 text-center">
                       <p className="text-xs text-emerald-600 font-medium">Status</p>
                       <p className="text-sm font-bold text-emerald-700">{admin.status}</p>
@@ -231,4 +238,4 @@ const ProfileAdmin = () => {
   );
 };
 
-export default ProfileAdmin;
+export default AdminProfile;

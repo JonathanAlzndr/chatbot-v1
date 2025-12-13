@@ -93,13 +93,13 @@ const Beranda = () => {
         {/* button heroo */}
         <div className=" flex gap-16">
           {/* Button ke Wa Admin */}
-          <button
+          {/* <button
             onClick={() => handleAction("http://wa.me/628386490650", 1000)}
             disabled={isLoading}
             className="hover:scale-105 duration-100 rounded-full flex items-center gap-2 justify-center bg-blue-700 font-bold text-[15px] p-2 text-white  w-60"
           >
             <FaWhatsapp className="text-xl" /> Konsultasi dengan Kami
-          </button>
+          </button> */}
           {/* Link to Page daftar */}
           <button
             onClick={() => handleAction("/daftar")}
