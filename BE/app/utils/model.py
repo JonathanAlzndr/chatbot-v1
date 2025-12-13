@@ -1,13 +1,16 @@
 import joblib 
 import pandas as pd
 import os
-from .utils import clean_text
+from .preprocessing import clean_text
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, '../models/')
-DATA_PATH = os.path.join(BASE_DIR, '../data/dataset_bima_jonas_final_v2.xlsx')
+# CHANGE 1: Go up two levels (../../) to find the models folder in BE root
+MODEL_PATH = os.path.abspath(os.path.join(BASE_DIR, '../../ml/'))
 
-print("⏳ Loading Model & Data...")
+# CHANGE 2: Go up two levels (../../) to find the data folder in BE root
+DATA_PATH = os.path.abspath(os.path.join(BASE_DIR, '../../data/dataset_bima_jonas_final_v2.xlsx'))
+
+print("Loading Model & Data...")
 
 model = joblib.load(os.path.join(MODEL_PATH, 'chatbot_model.pkl'))
 vectorizer = joblib.load(os.path.join(MODEL_PATH, 'vectorizer.pkl'))

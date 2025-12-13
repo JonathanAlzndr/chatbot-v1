@@ -1,12 +1,16 @@
 from flask import Blueprint, request, jsonify
-from ..model import model, vectorizer, df
-from ..utils import clean_text
+from ..utils.model import model, vectorizer, df
+from ..utils.preprocessing import clean_text
 from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
+from flask_jwt_extended import jwt_required
+from ..utils.decorators import student_required
+from ..services.student_service import get_student_profile, update_student_account
 
-main = Blueprint('main', __name__)
+student_bp = Blueprint('student', __name__, url_prefix='/api/student')
 
-@main.route('/chat', methods=['POST'])
+@student_bp.route('/chat', methods=['POST'])
+#@jwt_required()
+#@student_required
 def predict():
     data = request.get_json()
     user_input = data.get('message', '')
@@ -22,7 +26,7 @@ def predict():
     user_vec = vectorizer.transform([user_clean])
     pred_intent = model.predict(user_vec)[0]
 
-    subset = df[df['Label'] == pred_intent]
+    subset = df[df['Kategori'] == pred_intent]
 
     if subset.empty:
         return jsonify({
@@ -45,3 +49,27 @@ def predict():
         'intent': pred_intent, 
         'response': final_response
     })
+
+@student_bp.route('/profile', methods=['GET'])
+@jwt_required()
+@student_required
+def profile():
+    data = request.get_json()
+    studentId = data.get('studentId')
+
+    return get_student_profile(studentId)
+    
+
+@student_bp.route('/profile', methods=['PATCH'])
+@jwt_required()
+@student_required
+def update_account():
+    data = request.get_json()
+    studentId = data.get('studentId')
+    full_name = data.get('fullName')
+    email = data.get('email')
+    password = data.get('password')
+    whatsapp_number = data.get('whatsappNumber')
+
+    return update_student_account(studentId, full_name, email, password, whatsapp_number)
+    

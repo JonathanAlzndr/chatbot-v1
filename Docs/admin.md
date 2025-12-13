@@ -49,7 +49,7 @@ Admin
 **Authorization:**
 Required
 
-### Endpoint : `GET /api/admin/profile/{adminId}`
+### Endpoint : `GET /api/admin/profile`
 
 #### Response Body (Success):
 ```json
@@ -78,7 +78,7 @@ Admin update profile, the fields are optionals but must requested with minimal o
 **Access:**
 Admin
 
-### Endpoint : `PATCH /api/admin/profile{adminId}`
+### Endpoint : `PATCH /api/admin/profile`
 
 
 #### Request Body:
@@ -104,51 +104,6 @@ Admin
 }
 ```
 
----
-
-## Get All Students
-
-**Description:**
-Admin gets all the students list
-
-**Access:**
-Admin
-
-**Authorization:**
-Required
-
-### Endpoint : `GET /api/admin/students`
-
-#### Response Body (Success) :
-```json
-{
-    "msg": "success",
-    "students": [
-        {
-            "studentId": "22143214",
-            "username": "John Doe",
-            "whatsappNumber": "+6212342134",
-            "email": "abc@gmail.com",
-            "status": "Active",
-        },
-        {
-            "studentId": "22143214",
-            "username": "John Doe",
-            "whatsappNumber": "+6212342134",
-            "email": "abc@gmail.com",
-            "status": "Active",
-        },
-    ]
-}
-```
-
-#### Response Body (Failed) :
-```json 
-{
-    "msg": "Failed to fetch",
-    "students": []
-}
-```
 ---
 
 ## Get All Students
