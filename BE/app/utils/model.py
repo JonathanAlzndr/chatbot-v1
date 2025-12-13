@@ -5,7 +5,7 @@ from .preprocessing import clean_text
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # CHANGE 1: Go up two levels (../../) to find the models folder in BE root
-MODEL_PATH = os.path.abspath(os.path.join(BASE_DIR, '../../models/'))
+MODEL_PATH = os.path.abspath(os.path.join(BASE_DIR, '../../ml/'))
 
 # CHANGE 2: Go up two levels (../../) to find the data folder in BE root
 DATA_PATH = os.path.abspath(os.path.join(BASE_DIR, '../../data/dataset_bima_jonas_final_v2.xlsx'))

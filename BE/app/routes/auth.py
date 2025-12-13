@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
-from services.student_service import student_login, student_register
+from ..services.student_service import student_login, student_register
 
 auth_bp = Blueprint('auth', __name__, url_prefix='api/auth')
 

@@ -9,8 +9,8 @@ from ..services.student_service import get_student_profile, update_student_accou
 student_bp = Blueprint('student', __name__, url_prefix='/api/student')
 
 @student_bp.route('/chat', methods=['POST'])
-@jwt_required()
-@student_required
+#@jwt_required()
+#@student_required
 def predict():
     data = request.get_json()
     user_input = data.get('message', '')
@@ -26,7 +26,7 @@ def predict():
     user_vec = vectorizer.transform([user_clean])
     pred_intent = model.predict(user_vec)[0]
 
-    subset = df[df['Label'] == pred_intent]
+    subset = df[df['Kategori'] == pred_intent]
 
     if subset.empty:
         return jsonify({

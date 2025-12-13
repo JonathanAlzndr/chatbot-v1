@@ -1,6 +1,6 @@
-from utils.extensions import db
-from models.admin_model import Admin
-from models.student_model import Student
+from ..utils.extensions import db
+from ..models.admin_model import Admin
+from ..models.student_model import Student
 
 def get_admin_by_username(username):
     return Admin.query.filter(Admin.nama_lengkap==username).first()

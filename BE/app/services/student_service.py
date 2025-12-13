@@ -1,5 +1,6 @@
-from repositories.student_repository import get_student_by_student_id, create_student_account, update_student_account
-from utils.security import hash_password, verify_password
+from ..repositories.student_repository import (
+    get_student_by_student_id, create_student_account, update_student_account)
+from ..utils.security import hash_password, verify_password
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
 

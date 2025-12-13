@@ -1,5 +1,5 @@
-from utils.extensions import db
-from models.student_model import Student
+from ..utils.extensions import db
+from ..models.student_model import Student
 
 def get_student_by_student_id(studentId):
     return Student.query.filter(Student.nomor_induk_mahasiswa==studentId).first()

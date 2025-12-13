@@ -3,10 +3,11 @@ from flask_jwt_extended import jwt_required
 from ..utils.decorators import admin_required
 from ..services.admin_service import admin_update_account, admin_get_profile, admin_list_students, admin_get_student_detail,admin_update_student_status
 
-admin_bp = Blueprint('admin', __name__, url_prefix='api/admin')
+admin_bp = Blueprint('admin', __name__, url_prefix='/api/admin')
 
 @admin_bp.route('/profile', methods=['GET'])
 @jwt_required()
+@admin_required
 def profile():
     data = request.get_json()
     adminId = data.get('adminId')   
@@ -15,6 +16,7 @@ def profile():
 
 @admin_bp.route('/profile', methods=['PATCH'])  
 @jwt_required()
+@admin_required
 def update_profile():
     data = request.get_json()
     username = data.get('username')
@@ -26,6 +28,7 @@ def update_profile():
 
 @admin_bp.route('/students', methods=['GET'])
 @jwt_required()
+@admin_required
 def list_students():
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 10, type=int)
@@ -40,6 +43,7 @@ def get_student_detail(student_id):
 
 @admin_bp.route('/students/<int:student_id>', methods=['PATCH'])
 @jwt_required()
+@admin_required
 def update_student_status(student_id):
     data = request.get_json()
     status = data.get('status')
