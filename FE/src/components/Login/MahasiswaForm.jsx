@@ -18,15 +18,12 @@ const MahasiswaForm = () => {
         password: password,
       });
 
-      // Kunci yang dikirim BE (sesuai file student_service.py Anda) adalah 'token' dan 'role'.
-      // Asumsi BE juga mengirim data profile (nim, nama) seperti sebelumnya.
+      
       if (res.data.msg === "success") {
         // 1. Ambil 'token' (sesuai BE Anda)
         localStorage.setItem("token", res.data.token);
 
-        // 2. Ambil 'role' (sesuai BE Anda, yaitu "Student")
-        // NOTE: Di Sidebar.jsx, kondisinya adalah 'mahasiswa' (huruf kecil).
-        // Kita simpan sebagai lowercase di FE untuk sinkronisasi.
+      
         localStorage.setItem(
           "role",
           res.data.role?.toLowerCase() || "mahasiswa"
@@ -66,23 +63,21 @@ const MahasiswaForm = () => {
         />
       </div>
 
-      {/* 3. Bagian Input Password Dimodifikasi */}
+     
       <div className="mt-4">
         <label className="block text-sm font-medium mb-1">Password</label>
-        {/* Container Relative untuk menampung input dan icon absolute */}
+       
         <div className="relative w-full">
           <input
-            // Tipe berubah berdasarkan state showPassword
+          
             type={showPassword ? "text" : "password"}
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            // Perhatikan 'pr-10' (padding right) agar teks tidak menabrak icon
-            // 'pl-3' tetap sama seperti sebelumnya (px-3 = pl-3 pr-3)
+        
             className="w-full h-10 border border-gray-300 rounded-[5px] pl-3 pr-10 focus:ring-blue-500 focus:border-blue-500"
           />
-          {/* Tombol Icon Absolute */}
+       
           <button
-            type="button" // Penting: agar tidak memicu submit form
+            type="button" 
             onClick={() => setShowPassword(!showPassword)}
             className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 focus:outline-none"
           >
