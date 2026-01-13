@@ -20,6 +20,11 @@ def student_login(studentId, password):
         return {
             "msg": "Invalid username or password"
         }, 401
+    
+    if student.status_akun == 'Menunggu':
+        return jsonify({
+            "msg": "Akun Anda sedang dalam proses verifikasi oleh admin"
+        }), 403
 
     token = create_access_token(
         identity=str(student.nomor_induk_mahasiswa),
