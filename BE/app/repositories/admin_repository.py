@@ -27,3 +27,4 @@ def update_student_status(studentId, status):
         return None
     student.status_akun = status
     db.session.commit()
+    return student
