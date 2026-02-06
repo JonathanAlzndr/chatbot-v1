@@ -1,82 +1,130 @@
+Siap. Berikut **README.md** dengan **semua cara menjalankan digabung dalam satu alur utuh**. Langsung pakai.
+
+````md
 # Chatbot-v1: Academic Guidance Assistant 🤖
 
-Repositori ini berisi pengembangan sistem chatbot yang dirancang untuk membantu mahasiswa dalam mendapatkan informasi akademik secara cepat dan responsif.
+Repositori ini berisi pengembangan chatbot untuk membantu mahasiswa mendapatkan informasi akademik secara cepat dan responsif.
 
-## 1. Overview Project
+---
 
-### Background Problem
-Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang tersebar di berbagai dokumen atau harus menunggu jawaban dari admin departemen. Hal ini menyebabkan proses pencarian informasi menjadi tidak efisien.
+## Overview Project
+
+### Background
+Mahasiswa sering kesulitan mencari informasi akademik karena data tersebar dan respon admin lambat.
 
 ### Solution
-**Chatbot-v1** hadir sebagai asisten virtual yang mampu menjawab pertanyaan seputar panduan akademik secara instan. Dengan pemisahan antara Frontend dan Backend, sistem ini menawarkan antarmuka yang ramah pengguna serta pemrosesan data yang cerdas di sisi server.
+**Chatbot-v1** berfungsi sebagai asisten akademik virtual. Sistem memisahkan Frontend dan Backend agar pengembangan lebih rapi dan scalable.
 
 ---
 
-## 2. List Fitur
-- **Real-time Chatting:** Pengguna dapat mengirim dan menerima pesan secara instan.
-- **Responsive UI/UX:** Desain antarmuka yang bersih dan nyaman digunakan baik di desktop maupun perangkat mobile.
-- **Contextual Search:** Chatbot mampu memahami konteks pertanyaan mahasiswa untuk memberikan jawaban yang relevan.
+## Fitur
+- Real-time chatting
+- Responsive UI untuk desktop dan mobile
+- Contextual search berbasis pertanyaan pengguna
 
 ---
 
-## 3. Tech Stack
+## Tech Stack
 
-**Frontend:**
-- **JavaScript** (React/Vite)
-- **CSS Framework:** Tailwind CSS (untuk styling yang cepat dan responsif)
+**Frontend**
+- React + Vite
+- Tailwind CSS
 
-**Backend:**
-- **Python** (Flask/FastAPI)
+**Backend**
+- Python Flask atau FastAPI
 
-**Tools & Others:**
-- Git & GitHub untuk Version Control.
-- Postman (untuk testing API).
-
----
-
-## 4. Screenshot
-
-Dashboard Chat 
-[Desktop Screen](Docs/ChatbotDekstop.png
-) 
+**Tools**
+- Git dan GitHub
+- Postman
 
 ---
 
-## 5. Tutorial Jalankan di Device Pribadi
+## Screenshot
 
-Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal Anda:
-### Masuk ke folder Backend
-- cd BE
-### Membuat virtual environment
-- python -m venv venv
-### Aktivasi virtual environment
-### Untuk macOS/Linux:
-- source venv/bin/activate  
-### Untuk Windows:
-- venv\Scripts\activate
+![Dashboard Chat Desktop](Docs/ChatbotDekstop.png)
 
-### Install semua library yang dibutuhkan
-- pip install -r requirements.txt
+---
 
-### Menjalankan server backend
-- python main.py
-
-### Masuk ke folder Frontend
-- cd FE
-
-### Install dependensi node modules
-- install
-
-### Menjalankan aplikasi frontend (Development Mode)
-- npm run dev
+## Cara Menjalankan Project
 
 ### Prasyarat
-- Node.js (untuk Frontend)
-- Python 3.7 (untuk Backend)
+- Node.js
+- Python 3.7+
 
-### Langkah-langkah
+---
 
-1. **Clone Repositori:**
-   ```bash
-   git clone [https://github.com/JonathanAlzndr/chatbot-v1.git](https://github.com/JonathanAlzndr/chatbot-v1.git)
-   cd chatbot-v1
+### Langkah Menjalankan
+
+Clone repository:
+```bash
+git clone https://github.com/JonathanAlzndr/chatbot-v1.git
+cd chatbot-v1
+````
+
+Masuk ke folder Backend:
+
+```bash
+cd BE
+```
+
+Buat virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Aktifkan virtual environment:
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+macOS atau Linux:
+
+```bash
+source venv/bin/activate
+```
+
+Install dependency backend:
+
+```bash
+pip install -r requirements.txt
+```
+
+Jalankan backend:
+
+```bash
+python main.py
+```
+
+Buka terminal baru. Masuk ke folder Frontend:
+
+```bash
+cd FE
+```
+
+Install dependency frontend:
+
+```bash
+npm install
+```
+
+Jalankan frontend:
+
+```bash
+npm run dev
+```
+
+---
+
+## Catatan
+
+* Backend harus berjalan sebelum frontend.
+* Gunakan browser modern untuk hasil terbaik.
+
+```
+
+Kalau kamu mau versi **lebih ringkas**, **bahasa lebih santai**, atau **format standar lomba atau portofolio GitHub**, bilang saja.
+```
