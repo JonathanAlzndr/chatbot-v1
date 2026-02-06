@@ -38,8 +38,7 @@ Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang terseb
 ## 4. Screenshot
 
 Dashboard Chat 
-[Desktop Screen](Docs/ChatbotDekstop.png
-) 
+![Dashboard Chat Desktop](Docs/ChatbotDekstop.png)
 
 ---
 
