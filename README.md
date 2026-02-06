@@ -14,7 +14,6 @@ Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang terseb
 
 ## 2. List Fitur
 - **Real-time Chatting:** Pengguna dapat mengirim dan menerima pesan secara instan.
-- **Academic Knowledge Base:** Terintegrasi dengan basis data informasi akademik departemen.
 - **Responsive UI/UX:** Desain antarmuka yang bersih dan nyaman digunakan baik di desktop maupun perangkat mobile.
 - **Contextual Search:** Chatbot mampu memahami konteks pertanyaan mahasiswa untuk memberikan jawaban yang relevan.
 
@@ -28,7 +27,6 @@ Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang terseb
 
 **Backend:**
 - **Python** (Flask/FastAPI)
-- **AI Integration:** [Sebutkan model yang digunakan, contoh: OpenAI API / LangChain]
 
 **Tools & Others:**
 - Git & GitHub untuk Version Control.
@@ -37,10 +35,9 @@ Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang terseb
 ---
 
 ## 4. Screenshot
-*(Silakan tambahkan file gambar di folder Docs dan update link di bawah ini)*
 
 Dashboard Chat 
-[Desktop Screen](Docs/Screenshot 2025-12-20 185354.png
+[Desktop Screen](Docs/ChatbotDekstop.png
 ) 
 
 ---
@@ -51,7 +48,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal Anda:
 
 ### Prasyarat
 - Node.js (untuk Frontend)
-- Python 3.x (untuk Backend)
+- Python 3.7 (untuk Backend)
 
 ### Langkah-langkah
 
