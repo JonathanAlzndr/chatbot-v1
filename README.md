@@ -39,9 +39,9 @@ Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang terseb
 ## 4. Screenshot
 *(Silakan tambahkan file gambar di folder Docs dan update link di bawah ini)*
 
-| Dashboard Chat | Mobile View |
-|---|---|
-| ![Desktop Screen](Docs/screenshot-desktop.png) | ![Mobile Screen](Docs/screenshot-mobile.png) |
+Dashboard Chat 
+[Desktop Screen](Docs/Screenshot2025-12-20185354.png
+) 
 
 ---
 
