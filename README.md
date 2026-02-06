@@ -45,6 +45,21 @@ Dashboard Chat
 ## 5. Tutorial Jalankan di Device Pribadi
 
 Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal Anda:
+Setup Backend (BE):
+
+Bash
+cd BE
+python -m venv venv
+source venv/bin/activate  # Untuk Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python main.py
+Setup Frontend (FE): Buka terminal baru di folder utama proyek:
+
+Bash
+cd FE
+npm install
+npm run dev
+Akses Aplikasi: Buka browser dan akses link yang muncul di terminal (biasanya http://localhost:5173).
 
 ### Prasyarat
 - Node.js (untuk Frontend)
