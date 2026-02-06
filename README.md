@@ -45,9 +45,9 @@ Dashboard Chat
 ## 5. Tutorial Jalankan di Device Pribadi
 
 Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal Anda:
-# Masuk ke folder Backend
+### Masuk ke folder Backend
 - cd BE
-# Membuat virtual environment
+### Membuat virtual environment
 - python -m venv venv
 # Aktivasi virtual environment
 # Untuk macOS/Linux:
