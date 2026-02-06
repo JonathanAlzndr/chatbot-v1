@@ -40,7 +40,7 @@ Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang terseb
 *(Silakan tambahkan file gambar di folder Docs dan update link di bawah ini)*
 
 Dashboard Chat 
-[Desktop Screen](Docs/Screenshot2025-12-20185354.png
+[Desktop Screen](Docs/Screenshot 2025-12-20 185354.png
 ) 
 
 ---
