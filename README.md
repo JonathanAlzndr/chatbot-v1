@@ -46,31 +46,29 @@ Dashboard Chat
 
 Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal Anda:
 # Masuk ke folder Backend
-cd BE
-
+- cd BE
 # Membuat virtual environment
-python -m venv venv
-
+- python -m venv venv
 # Aktivasi virtual environment
 # Untuk macOS/Linux:
-source venv/bin/activate  
+- source venv/bin/activate  
 # Untuk Windows:
-venv\Scripts\activate
+- venv\Scripts\activate
 
 # Install semua library yang dibutuhkan
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 # Menjalankan server backend
-python main.py
+- python main.py
 
 # Masuk ke folder Frontend
-cd FE
+- cd FE
 
 # Install dependensi node modules
-npm install
+- install
 
 # Menjalankan aplikasi frontend (Development Mode)
-npm run dev
+- npm run dev
 
 ### Prasyarat
 - Node.js (untuk Frontend)
