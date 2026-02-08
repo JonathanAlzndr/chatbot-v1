@@ -6,19 +6,19 @@ Proyek ini dibuat untuk meningkatkan efisiensi proses bimbingan akademik, mengur
 
 ## Latar Belakang
 Proses bimbingan akademik yang dilakukan secara langsung atau melalui pesan pribadi (misalnya WhatsApp) sering menimbulkan beberapa kendala:
--Waktu respon dosen terbatas karena banyaknya mahasiswa
--Pertanyaan yang berulang dari mahasiswa yang berbeda
--Kesulitan dokumentasi dan pencarian riwayat konsultasi
+* Waktu respon dosen terbatas karena banyaknya mahasiswa
+* Pertanyaan yang berulang dari mahasiswa yang berbeda
+* Kesulitan dokumentasi dan pencarian riwayat konsultasi
 Dengan chatbot akademik ini, mahasiswa dapat memperoleh respon awal secara otomatis, sementara dosen dapat lebih fokus pada kasus yang membutuhkan pendampingan khusus.
 
 ## Fitur Utama
 Admin:
--Verifikasi pendaftaran akun mahasiswa
--Manajemen akun pengguna
+* Verifikasi pendaftaran akun mahasiswa
+* Manajemen akun pengguna
 
 Mahasiswa:
--Registrasi akun
--Mengajukan pertanyaan melalui chatbot akademik
+* Registrasi akun
+* Mengajukan pertanyaan melalui chatbot akademik
 
 ## Tech Stack
 
