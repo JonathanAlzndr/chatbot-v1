@@ -19,13 +19,13 @@ def admin_login(username, password):
         expires_delta=timedelta(hours=24)
     )
 
-    return jsonify({ # <<< PERBAIKAN: Gunakan jsonify
+    return jsonify({
          "msg": "success",
-        "access_token": token, # PERBAIKAN: Gunakan 'access_token' untuk konsistensi frontend
-        "role": "admin", # lowercase untuk sinkronisasi dengan FE
-        "id_admin": admin.id_admin, # Tambahkan ID admin
-        "email": admin.email, # WAJIB: Kirim email untuk disimpan frontend
-        "nama_lengkap": admin.nama_lengkap # WAJIB: Kirim nama lengkap untuk disimpan frontend
+        "access_token": token, 
+        "role": "admin", 
+        "id_admin": admin.id_admin, 
+        "email": admin.email, 
+        "nama_lengkap": admin.nama_lengkap
     }), 200
 
 def admin_register(username, email, password, whatsapp_number):

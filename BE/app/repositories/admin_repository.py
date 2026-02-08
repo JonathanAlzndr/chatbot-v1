@@ -1,10 +1,9 @@
 from ..utils.extensions import db
 from ..utils.extensions import db
-from ..models.admin_model import Admin # Tambahkan ini jika belum ada
-from ..models.student_model import Student # Tambahkan ini jika belum ada
+from ..models.admin_model import Admin
+from ..models.student_model import Student
 
 def get_admin_by_username(username):
-    # Mencari berdasarkan nama_lengkap (sesuai DB)
     return Admin.query.filter(Admin.nama_lengkap==username).first()
 
 

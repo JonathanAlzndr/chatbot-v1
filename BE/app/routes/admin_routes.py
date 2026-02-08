@@ -9,7 +9,6 @@ admin_bp = Blueprint('admin', __name__, url_prefix='/api/admin')
 @jwt_required()
 @admin_required
 def profile():
-    # PERBAIKAN: Ambil ID Admin dari Token, bukan body request
     adminId = get_jwt_identity() 
     
     return admin_get_profile(adminId)
@@ -18,17 +17,14 @@ def profile():
 @jwt_required()
 @admin_required
 def update_profile():
-    adminId = get_jwt_identity() # Ambil ID Admin dari Token
+    adminId = get_jwt_identity() 
     data = request.get_json()
-    
-    # MAPPING data dari Frontend ke nama kolom DB/Service
-    # Frontend mungkin mengirim 'nama_lengkap', 'email', 'nomor_whatsapp', dll.
+
     nama_lengkap = data.get('nama_lengkap')
     email = data.get('email')
     password = data.get('password')
     nomor_whatsapp = data.get('nomor_whatsapp') 
 
-    # Kirim ID Admin dan data yang sudah di-mapping ke service
     return admin_update_account(adminId, nama_lengkap, email, password, nomor_whatsapp)
 
 @admin_bp.route('/students', methods=['GET'])

@@ -20,13 +20,11 @@ def admin_register():
     username = data.get('username')
     email = data.get('email')
     password = data.get('password')
-    whatsapp_number = data.get('whatsapp_number') # Gunakan .get()
-
+    whatsapp_number = data.get('whatsapp_number')
     return admin_register_service(username, email, password, whatsapp_number)
 
-# --- STUDENT ROUTES ---
 
-@auth_bp.route('/student/login', methods=['POST']) # Tambahkan slash di depan route
+@auth_bp.route('/student/login', methods=['POST']) 
 def student_login():
     data = request.get_json()
     studentId = data.get('studentId')

@@ -16,12 +16,10 @@ def student_register(studentId, full_name, email, password, whatsapp_number):
 def student_login(studentId, password):
     student = get_student_by_student_id(studentId)
     
-    # 1. Cek User & Password
+ 
     if not student or not verify_password(password, student.kata_sandi):
         return {"msg": "Invalid username or password"}, 401
-    
-    # 2. PERBAIKAN LOGIKA STATUS: 
-    # Hanya izinkan login jika status adalah 'Aktif'
+   
     if student.status_akun != 'Aktif':
         pesan = "Akun Anda belum aktif atau telah dinonaktifkan oleh admin."
         
@@ -32,25 +30,22 @@ def student_login(studentId, password):
         elif student.status_akun == 'Nonaktif':
             pesan = "Akun Anda telah dinonaktifkan"
 
-        return jsonify({"msg": pesan}), 403 # Forbidden
+        return jsonify({"msg": pesan}), 403
 
-    # 3. Jika Aktif, buat token (Lanjut ke bawah sesuai kode lama Anda)
+
     token = create_access_token(
         identity=str(student.nomor_induk_mahasiswa),
         additional_claims={"role": "Student"},
         expires_delta=timedelta(hours=24)
     )
-    # ... return jsonify success ...
 
-    return jsonify({ # <<< HARUS DIUBAH KE jsonify
+    return jsonify({
         "msg": "success",
         "token": token,
         "role": "Student",
-        
-        # >>> INI DATA YANG HILANG DAN HARUS DITAMBAHKAN <<<
         "nomor_induk_mahasiswa": student.nomor_induk_mahasiswa,
         "nama_lengkap": student.nama_lengkap
-        # ----------------------------------------------------
+      
     }), 200
 
 def get_student_profile(studentId): 
@@ -59,7 +54,7 @@ def get_student_profile(studentId):
 
         return jsonify({
         "msg": "Student not found"
-         }), 404 # Perbaikan 1: Gunakan jsonify
+         }), 404 
 
     student_data = {
         "studentId": student.nomor_induk_mahasiswa,
@@ -70,7 +65,7 @@ def get_student_profile(studentId):
         "password": student.kata_sandi
     }
 
-    return jsonify({ # Perbaikan 2: Gunakan jsonify
+    return jsonify({
          "msg": "success",
         "student": student_data
      }), 200
