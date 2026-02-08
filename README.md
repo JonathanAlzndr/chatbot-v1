@@ -23,11 +23,55 @@ Mahasiswa:
 ## Tech Stack
 
 Frontend: Javascript, React, Vite
-Backend: Python, Flask
-Database: MariaDB
-Tools: GitHub, Postman, Figma, Visual Studio Code
+* Javascript
+* React Vite
+Backend:
+* Python
+* Flask
+* MariaDB
+Tools: 
+* GitHub
+* Postman
+* Figma
+* Visual Studio Code
 
 ## Instalasi
+1. Clone Repository
+```
+git clone https://github.com/JonathanAlzndr/chatbot-v1.git
+cd chatbot-v1
+```
+2. Setup Backend (Flask)
+```
+# masuk ke folder backend
+cd be
+
+# membuat virtual environment (Windows)
+python -m venv venv
+
+# aktivasi virtual environment
+venv\Scripts\activate
+
+# install dependencies
+pip install -r requirements.txt
+```
+Selanjutnya, siapkan database MariaDB dan buat file .env untuk menghubungkan backend dengan database.
+Jalankan Server Backend:
+```
+flask run
+```
+
+3. Setup Frontend
+```
+# masuk ke folder frontend
+cd ../fe
+
+# install dependencies
+npm install
+
+# jalankan aplikasi
+npm run dev
+```
 
 ## Screenshots
 
