@@ -25,10 +25,12 @@ Mahasiswa:
 Frontend: Javascript, React, Vite
 * Javascript
 * React Vite
+  
 Backend:
 * Python
 * Flask
 * MariaDB
+
 Tools: 
 * GitHub
 * Postman
