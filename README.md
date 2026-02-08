@@ -1,86 +1,36 @@
+# Chatbot Pembimbing Akademik Berbasis Web (Naive Bayes)
+Proyek ini merupakan aplikasi web yang berperan sebagai pembimbing akademik bagi mahasiswa
 
-# Chatbot-v1: Academic Guidance Assistant 🤖
+Aplikasi ini merupakan chatbot pembimbing akademik berbasis web yang menggunakan algoritma Naive Bayes untuk membantu mahasiswa memperoleh informasi akademik secara cepat tanpa harus melakukan konsultasi langsung.
+Proyek ini dibuat untuk meningkatkan efisiensi proses bimbingan akademik, mengurangi antrean konsultasi, serta mempermudah mahasiswa mendapatkan jawaban awal terkait pertanyaan akademik yang umum diajukan.
 
-Repositori ini berisi pengembangan sistem chatbot yang dirancang untuk membantu mahasiswa dalam mendapatkan informasi akademik secara cepat dan responsif.
+## Latar Belakang
+Proses bimbingan akademik yang dilakukan secara langsung atau melalui pesan pribadi (misalnya WhatsApp) sering menimbulkan beberapa kendala:
+-Waktu respon dosen terbatas karena banyaknya mahasiswa
+-Pertanyaan yang berulang dari mahasiswa yang berbeda
+-Kesulitan dokumentasi dan pencarian riwayat konsultasi
+Dengan chatbot akademik ini, mahasiswa dapat memperoleh respon awal secara otomatis, sementara dosen dapat lebih fokus pada kasus yang membutuhkan pendampingan khusus.
 
-## 1. Overview Project
+## Fitur Utama
+Admin:
+-Verifikasi pendaftaran akun mahasiswa
+-Manajemen akun pengguna
 
-### Background Problem
-Banyak mahasiswa seringkali kesulitan mendapatkan informasi akademik yang tersebar di berbagai dokumen atau harus menunggu jawaban dari admin departemen. Hal ini menyebabkan proses pencarian informasi menjadi tidak efisien.
+Mahasiswa:
+-Registrasi akun
+-Mengajukan pertanyaan melalui chatbot akademik
 
-### Solution
-**Chatbot-v1** hadir sebagai asisten virtual yang mampu menjawab pertanyaan seputar panduan akademik secara instan. Dengan pemisahan antara Frontend dan Backend, sistem ini menawarkan antarmuka yang ramah pengguna serta pemrosesan data yang cerdas di sisi server.
+## Tech Stack
 
----
+Frontend: Javascript, React, Vite
+Backend: Python, Flask
+Database: MariaDB
+Tools: GitHub, Postman, Figma, Visual Studio Code
 
-## 2. List Fitur
-- **Real-time Chatting:** Pengguna dapat mengirim dan menerima pesan secara instan.
-- **Responsive UI/UX:** Desain antarmuka yang bersih dan nyaman digunakan baik di desktop maupun perangkat mobile.
-- **Contextual Search:** Chatbot mampu memahami konteks pertanyaan mahasiswa untuk memberikan jawaban yang relevan.
+## Instalasi
 
----
+## Screenshots
 
-## 3. Tech Stack
-
-**Frontend:**
-- **JavaScript** (React/Vite)
-- **CSS Framework:** Tailwind CSS (untuk styling yang cepat dan responsif)
-
-**Backend:**
-- **Python** (Flask/FastAPI)
-
-**Tools & Others:**
-- Git & GitHub untuk Version Control.
-- Postman (untuk testing API).
-
----
-
-## 4. Screenshot
-
-Dashboard Chat 
-![Dashboard Chat Desktop](Docs/ChatbotDekstop.png)
-
----
-
-## 5. Tutorial Jalankan di Device Pribadi
-
-Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal Anda:
-### Masuk ke folder Backend
-`` cd BE ``
-  
-### Membuat virtual environment
-- python -m venv venv
-- 
-### Aktivasi virtual environment
-
-### Untuk macOS/Linux:
-- source venv/bin/activate
--   
-### Untuk Windows:
-- venv\Scripts\activate
-
-### Install semua library yang dibutuhkan
-- pip install -r requirements.txt
-
-### Menjalankan server backend
-- python main.py
-
-### Masuk ke folder Frontend
-- cd FE
-
-### Install dependensi node modules
-- install
-
-### Menjalankan aplikasi frontend (Development Mode)
-- npm run dev
-
-### Prasyarat
-- Node.js (untuk Frontend)
-- Python 3.7 (untuk Backend)
-
-### Langkah-langkah
-
-1. **Clone Repositori:**
-   ```bash
-   git clone [https://github.com/JonathanAlzndr/chatbot-v1.git](https://github.com/JonathanAlzndr/chatbot-v1.git)
-   cd chatbot-v1
+## Contributors:
+- [Jonathan Alezandro](https://github.com/JonathanAlzndr) (Backend Developer)
+- [Daniel Warouw](https://github.com/Niel-D22) (Frontend Developer)
